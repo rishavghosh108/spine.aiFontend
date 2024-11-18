@@ -9,7 +9,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  private url: string = "http://192.168.1.81:8080";
+  private url: string = "https://spyne-aibackend-j4xq.onrender.com";
 
   private signup_url: string = this.url + "/system/signup/"
   private login_url: string = this.url + "/system/login/"
