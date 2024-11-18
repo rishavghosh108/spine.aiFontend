@@ -1,0 +1,210 @@
+.product-detail-container {
+  padding: 20px;
+  background: linear-gradient(to bottom right, #f4f7fc, #dbeafe);
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 12px;
+  font-family: Arial, sans-serif;
+}
+
+.product-detail-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.product-title h3 {
+  font-size: 26px;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.product-description p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #555;
+  margin: 20px 0;
+  text-align: justify;
+}
+
+.product-tags {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #555;
+}
+
+.product-tags strong {
+  color: #333;
+}
+
+.product-tags .tag {
+  display: inline-block;
+  background-color: #5fdfff;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+
+.product-image {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-images {
+  margin-top: 20px;
+}
+
+.product-images h4 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  background-position: center;
+  background-size: cover;
+  gap: 15px;
+  justify-content: center;
+}
+
+.image-gallery img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05);
+}
+
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.actions button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.actions .edit-button {
+  background-color: #5fdfff;
+  color: white;
+}
+
+.actions .delete-button {
+  background-color: #feb47b;
+  color: white;
+}
+
+.actions button:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.edit-input,
+.edit-textarea,
+.edit-tag-input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+.edit-textarea {
+  height: 120px;
+}
+
+.add-tag-button {
+  background-color: #5fdfff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.add-tag-button:hover {
+  background-color: #feb47b;
+}
+
+.edit-button {
+  background-color: #feb47b;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #5fdfff;
+}
+
+.image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.remove-image-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 0, 0, 0.7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.remove-image-button:hover {
+  background-color: red;
+}
+
+.loader {
+  position: absolute;
+  align-items: center;
+  top: 10%;
+  left: 30%;
+ transform: translate(-50%);
+ border: 8px solid #feb47b;
+ border-top: 8px solid #36c9ee;
+ border-radius: 50%;
+ width: 20px;
+ height: 20px;
+ animation: spin 1s linear infinite;
+ z-index: 1000;
+}
+
+@keyframes spin {
+ 0% { transform: rotate(0deg); }
+ 100% { transform: rotate(360deg); }
+}

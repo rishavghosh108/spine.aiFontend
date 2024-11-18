@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="product-creation-container">
+  <h2>Create a New Product</h2>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="productForm" novalidate>
+    <div class="form-group">
+      <div class="error" *ngIf="productForm.controls['title'].touched && productForm.controls['title'].invalid">
+        <small *ngIf="productForm.controls['title'].hasError('required')">Title is required.</small>
+        <small *ngIf="productForm.controls['title'].hasError('minlength')">Title must be at least 3 characters
+          long.</small>
+      </div>
+      <label for="title">Product Title</label>
+      <input type="text" id="title" formControlName="title" placeholder="Enter product title" required />
+    </div>
+
+    <div class="form-group">
+      <div class="error"
+        *ngIf="productForm.controls['description'].touched && productForm.controls['description'].invalid">
+        <small *ngIf="productForm.controls['description'].hasError('required')">Description is required.</small>
+        <small *ngIf="productForm.controls['description'].hasError('minlength')">Description must be at least 10
+          characters long.</small>
+      </div>
+      <label for="description">Product Description</label>
+      <textarea id="description" formControlName="description" placeholder="Enter product description"
+        required></textarea>
+    </div>
+
+    <div class="form-group">
+      <div class="error" *ngIf="productForm.controls['tags'].touched && productForm.controls['tags'].invalid">
+        <small *ngIf="productForm.controls['tags'].hasError('required')">Tags are required.</small>
+        <small *ngIf="productForm.controls['tags'].hasError('pattern')">Please enter valid tags (comma
+          separated).</small>
+      </div>
+      <label for="tags">Product Tags (comma separated)</label>
+      <input type="text" id="tags" formControlName="tags" placeholder="Enter product tags" />
+    </div>
+
+    <div class="form-group">
+      <label for="images">Upload Images (up to 10)</label>
+      <input type="file" id="images" (change)="onFileChange($event)" multiple accept="image/*" />
+      <div *ngIf="images.length > 0" class="image-preview">
+        <h4>Selected Images:</h4>
+        <div class="preview-grid">
+          <div *ngFor="let image of images" class="preview-item">
+            <img [src]="image.preview" alt="Product Image Preview" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="productForm.invalid || isLoading">
+      <div class="loader" *ngIf="isLoading"></div>
+      Create Product
+    </button>
+  </form>
+</div>

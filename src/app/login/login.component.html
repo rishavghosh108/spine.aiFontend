@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">Login</h2>
+    <form class="form" [formGroup]="login" (ngSubmit)="Login()">
+      <div class="form-group">
+        <div *ngIf="login.get('email')?.invalid && login.get('email')?.touched||email" class="span">please enter your
+          email</div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email"
+          autocomplete="current-mobile" formControlName="email"
+          [style.border-color]="login.get('email')?.invalid && login.get('email')?.touched||email? 'red' : ''"
+          (input)="onInputChange_Email(login.get('email')?.valid)">
+      </div>
+
+      <div class="form-group">
+        <div *ngIf="login.get('password')?.invalid && login.get('password')?.touched||password" class="span">please
+          enter a strong password</div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password"
+          autocomplete="current-password" formControlName="password"
+          [style.border-color]="login.get('password')?.invalid && login.get('password')?.touched||password? 'red' : ''"
+          (input)="onInputChange_Password(login.get('password')?.valid)">
+      </div>
+
+      <button type="submit" class="btn-submit">Login</button>
+    </form>
+
+    <div class="signup-link">
+      <p>Not a registered user? <a routerLink="/signup">Sign up here</a></p>
+    </div>
+  </div>
+</div>

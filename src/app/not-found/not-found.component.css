@@ -1,0 +1,57 @@
+.page_404 {
+    padding: 0;
+    background: #fff;
+    font-family: 'Arvo', serif;
+    display: flex;
+}
+
+.four_zero_four_bg {
+
+    background-image: url(../../assets/not_found.gif);
+    height: 100vh;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.text-center {
+    margin-top: 4%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.text-center h1 {
+    font-size: 100px;
+    text-align: center;
+    padding: 5%;
+}
+
+.contant {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.h2 {
+    font-family: bold;
+    font-size: 40px;
+}
+
+a {
+    background-color: #39ac31;
+    padding: 7px;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

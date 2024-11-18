@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="logo">
+    <h1>Spyne.ai Assignment</h1>
+  </div>
+  <div class="header-content">
+    <div class="buttons">
+      <button class="btn add-btn" (click)="onAddClick()"
+        [style.background-color]="currentPath == '/add' ? 'green' : ''">Add</button>
+      <button class="btn list-btn" (click)="onListClick()"
+        [style.background-color]="currentPath == '/list' ? 'green' : ''">List</button>
+    </div>
+    <div class="profile">
+      <img src="../../assets/profile.png" alt="Profile" (click)="Profile()" />
+      <div class="pbox" *ngIf="profile">
+        <app-profile></app-profile>
+      </div>
+    </div>
+  </div>
+</header>

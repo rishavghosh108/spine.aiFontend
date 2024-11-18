@@ -1,0 +1,48 @@
+<div class="product-detail-container">
+  <h2>Product Detail</h2>
+
+  <div class="product-title">
+    <h3 *ngIf="!isEditing">{{ product.title }}</h3>
+    <input *ngIf="isEditing" [(ngModel)]="product.title" class="edit-input" placeholder="Enter product title" />
+  </div>
+
+  <div class="product-description">
+    <p *ngIf="!isEditing">{{ product.description }}</p>
+    <textarea *ngIf="isEditing" [(ngModel)]="product.description" class="edit-textarea"
+      placeholder="Enter product description"></textarea>
+  </div>
+
+  <div class="product-tags">
+    <strong>Tags:</strong>
+    <div *ngIf="isEditing">
+      <div *ngFor="let tag of product.tags; let i = index; trackBy: trackByFn">
+        <input [(ngModel)]="product.tags[i]" class="edit-tag-input" placeholder="Edit tag" />
+        <button (click)="removeTag(i)" class="remove-tag-button">Remove</button>
+      </div>
+      <button (click)="addTag()" class="add-tag-button">Add Tag</button>
+    </div>
+    <span *ngIf="!isEditing">
+      <span *ngFor="let tag of product.tags; let i = index">
+        <span class="tag">{{ tag }}</span><span *ngIf="i < product.tags.length - 1">, </span>
+      </span>
+    </span>
+  </div>
+
+
+
+  <div class="product-images" *ngIf="product.images?.length">
+    <h4>Images:</h4>
+    <div class="image-gallery">
+      <div *ngFor="let image of product.images; let i = index" class="image-container">
+        <img [src]="image" alt="Product Image" class="product-image" />
+        <button *ngIf="isEditing" (click)="removeImage(image)" class="remove-image-button">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="edit-button" (click)="onEdit()">{{ isEditing ? 'Save' : 'Edit' }}
+      <div class="loader" *ngIf="isLoading"></div>
+    </button>
+  </div>
+</div>

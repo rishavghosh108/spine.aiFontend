@@ -1,0 +1,45 @@
+<div class="signup-container">
+  <div class="signup-box">
+    <h2>Create Account</h2>
+    <form [formGroup]="signup" (ngSubmit)="Signup()">
+      <div class="form-group">
+        <div *ngIf="signup.get('name')?.invalid && signup.get('name')?.touched || name" class="span">Please enter your
+          name</div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" formControlName="name" placeholder="Full name" class="input-field"
+          autocomplete="current-name"
+          [style.border-color]="signup.get('name')?.invalid && signup.get('name')?.touched || name ? 'red' : 'initial'"
+          (input)="onInputChange_Name(signup.get('name')?.valid)" />
+      </div>
+
+      <div class="form-group">
+        <div *ngIf="signup.get('email')?.invalid && signup.get('email')?.touched || email" class="span">Please enter
+          your email</div>
+        <label for="email">Email</label>
+        <input type="email" id="email" formControlName="email" placeholder="email" class="input-field"
+          autocomplete="current-email"
+          [style.border-color]="signup.get('email')?.invalid && signup.get('email')?.touched || email ? 'red' : 'initial'"
+          (input)="onInputChange_Email(signup.get('email')?.valid)" />
+      </div>
+
+      <div class="form-group">
+        <div *ngIf="signup.get('password')?.invalid && signup.get('password')?.touched || password" class="span">Please
+          enter a strong password</div>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" formControlName="password" placeholder="password"
+          class="input-field" autocomplete="current-password"
+          [style.border-color]="signup.get('password')?.invalid && signup.get('password')?.touched || password ? 'red' : 'initial'"
+          (input)="onInputChange_Password(signup.get('password')?.valid)" />
+      </div>
+
+      <button type="submit" class="submit-btn">
+        Sign Up
+      </button>
+    </form>
+
+    <div class="login-link">
+      <br>
+      <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<app-header></app-header>
+
+<div class="search-container" *ngIf="filteredProducts.length > 0 && !viewState">
+  <input 
+    type="text" 
+    [(ngModel)]="searchTag" 
+    (input)="filterByKeyword()" 
+    placeholder="Search by keyword (title, description, tags)" 
+    class="search-input" 
+  />
+</div>
+
+
+
+<div class="product-list-container" *ngIf="filteredProducts.length > 0 && !viewState">
+  <h2 class="product-list-title">Cars List</h2>
+  <div class="product-card" *ngFor="let product of filteredProducts">
+    <div class="product-card-header">
+      <h3 class="product-title">{{ product.title }}</h3>
+      <div class="product-tags">
+        <span *ngFor="let tag of product.tags" class="tag">{{ tag }}</span>
+      </div>
+    </div>
+    <p class="product-description">{{ product.description }}</p>
+    <div class="buttons">
+      <button class="btn-view" (click)="CarView(product.id, product.user_id, product.url_id)">
+        View Details
+      </button>
+      <button class="btn-view delete-btn" (click)="DeleteProduct(product.id, product.user_id, product.url_id)">
+        Delete Car
+      </button>
+    </div>
+  </div>
+</div>
+
+<app-product-detail [product]="car" *ngIf="viewState"></app-product-detail>
+
+<div class="no-cars-container" *ngIf="filteredProducts.length < 1">
+  <div class="icon">🚗</div>
+  <h3>No Cars Available</h3>
+  <p>We're sorry, but there are currently no cars available at the moment. Please check back later.</p>
+</div>

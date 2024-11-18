@@ -1,0 +1,152 @@
+.product-creation-container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #5fdfff, #feb47b);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+.product-creation-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #fff;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #fff;
+}
+
+input,
+textarea {
+  width: 95%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  position: relative;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+button:disabled {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+.error {
+  position: absolute;
+  margin-left: 200px;
+  margin-top: 5px;
+  font-size: 14px;
+  color: rgb(251, 105, 105);
+}
+
+.image-preview {
+  margin-top: 15px;
+}
+
+.preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.preview-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.loader {
+   position: absolute;
+   align-items: center;
+   top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  border: 8px solid #feb47b;
+  border-top: 8px solid #36c9ee;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  z-index: 1000;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button:disabled {
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+}
+
+
+@media (max-width: 768px) {
+  .product-creation-container {
+    width: 90%;
+  }
+
+  button {
+    font-size: 16px;
+  }
+
+  .preview-item img {
+    width: 80px;
+    height: 80px;
+  }
+
+  input,
+  textarea {
+    width: 92%;
+  }
+
+  @media (max-width: 420px) {
+    .error {
+      position: absolute;
+      margin-left: 150px;
+      margin-top: 5px;
+      font-size: 14px;
+      color: rgb(251, 105, 105);
+    }
+  }
+}
