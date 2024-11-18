@@ -22,14 +22,6 @@ export class ProductListComponent {
     "user_id": number,
     "url_id": number
   }[] = [
-    {
-      "title": "audi",
-      "description": "my fav",
-      "tags": ['own'],
-      "id": 1,
-      "user_id": 1,
-      "url_id": 1
-    }
   ];
 
   filteredProducts = this.products;
